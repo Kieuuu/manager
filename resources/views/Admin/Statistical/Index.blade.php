@@ -101,19 +101,18 @@
                     </div>
 
                     <div class="col-md-6" style="margin-left: 260pt" >
-                        <li>Đang làm
+                        <li>Đang chờ
+                            <span class="float-end">{{$task->where('task_status_id','==',1)->count()}}
+                                </span></li>
+                        <li class="text-primary">Đang làm
                             <span class="float-end">{{$task->where('task_status_id','==',2)->count()}}
                             </span></li>
-                        <li>Hoàn thành 
+                        <li class="text-success">Hoàn thành 
                             <span class="float-end">{{$task->where('task_status_id','==',4)->count()}}
                             </span></li>
-                        <li>Lỗi
+                        <li class="text-danger">Lỗi
                             <span class="float-end">{{$task->where('task_status_id','==',3)->count()}}
                                 </span></li>
-                        <li>Đang chờ
-                            <span
-                                class="float-end">{{$task->where('task_status_id','==',1)->count()}}
-                            </span></li>
 
                     </div>
                 </div>

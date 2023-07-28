@@ -98,7 +98,8 @@
                             </div>
                             <div class="pro-deadline m-b-15">
                                 <div class="sub-title">
-                                    Ngày kết thúc: <span class="float-end">{{App\Helper\DateHelper::date($i->date_end)}}</span>
+                                    Ngày kết thúc:
+                                     <span class="float-end">{{App\Helper\DateHelper::date($i->date_end)}}</span>
                                 </div>
 
                             </div>
@@ -117,8 +118,6 @@
                             //                            $deadline =
                             ?>
                             <p class="m-b-5">Tổng thời gian:<span class=" float-end">
-                                {{-- <span class="{{$times >0 ? 'text-success' :'text-danger'}}  float-end">{{$times}}%</span> --}}
-
                                 ( {{\Carbon\Carbon::parse($i->date_start)->diffInDays($i->date_end)}} Days)
                             </p>
                             {{-- <div class="progress progress-xs mb-0 bg-danger">

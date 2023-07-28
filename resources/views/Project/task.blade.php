@@ -51,7 +51,7 @@
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title">Thêm thành viên vào task</h5>
+                                                            <h5 class="modal-title">Thêm thành viên vào công việc</h5>
                                                             <button type="button" class="close" data-bs-dismiss="modal"
                                                                     aria-label="Close">
                                                                 <span aria-hidden="true">×</span>
@@ -65,7 +65,7 @@
                                                                     <select name="member[]" class="select"
                                                                             id="select_member" multiple="multiple">
                                                                         @foreach($param['member'] as $i)
-                                                                            <option value="{{$i->id}}">{{$i->user_detail->fullname.' ('.$i->designation->name.')' }}</option>
+                                                                            <option value="{{$i->id}}">{{$i->user_detail->fullname }}</option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>

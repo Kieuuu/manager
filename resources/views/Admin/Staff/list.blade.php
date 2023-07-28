@@ -70,11 +70,11 @@
                         <tr>
                             <td>{{$key+1}}</td>
 
-                            <td><button class="btn secondary" data-bs-target="#view_employee{{$i->id}}" data-bs-toggle="modal">{{$i->user_detail->fullname}}</button></td>
+                            <td><button class="btn secondary" data-bs-target="#view_employee{{$i->id}}" data-bs-toggle="modal">
+                                {{$i->user_detail->fullname}}</button></td>
                             <td>{{$i->user_name}}</td>
                             <td>{{$i->email}}</td>
                             <td>{{($i->user_detail->birthday)?App\Helper\DateHelper::date($i->user_detail->birthday):""}}</td>
-
 
                             <td>{{$i->designation->name??"Không có"}}</td>
                             <td>

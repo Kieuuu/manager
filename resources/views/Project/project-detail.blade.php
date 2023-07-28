@@ -21,8 +21,8 @@
                         <a href="" class="btn add-btn" data-bs-toggle="modal" data-bs-target="#add_tasks"><i
                         class="fa fa-plus"></i> Thêm công việc </a>
                         @if ($view_user)
-                            <a href="{{route('du-an.chi-tiet',$item->project_url)}}" class="btn" ><i
-                                class="fa fa-arrow-left"></i> Quay lại</a>
+                            <a href="{{route('du-an.chi-tiet',$item->project_url)}}" class="btn" >
+                                <i class="fa fa-arrow-left"></i> Quay lại</a>
                         @endif
                     </div>
                 </div>
@@ -102,7 +102,9 @@
                                 <div>
                                     <select name="member[]" class="select select_member" multiple="multiple">
                                         @foreach($param['member'] as $i)
-                                        <option value="{{$i->id}}">{{!empty($i->user_detail->fullname) ? $i->user_detail->fullname  : 'Tài khoản đã xóa'  }}</option>
+                                        {{-- <option value="{{$i->id}}">{{!empty($i->user_detail->fullname) ? $i->user_detail->fullname.' ('.$i->designation->name.')'  : 'Tài khoản đã xóa'  }}</option> --}}
+                                        <option value="{{$i->id}}">{{!empty($i->user_detail->fullname) ? $i->user_detail->fullname : 'Tài khoản đã xóa'  }}</option>
+
                                         @endforeach
                                     </select>
 

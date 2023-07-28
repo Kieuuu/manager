@@ -42,11 +42,11 @@ class SalaryController extends Controller
         $today = Carbon::now();
         
         if(!$today->between(Carbon::now()->startOfMonth(), Carbon::now()->startOfMonth()->addDays(30),true)) {
-            Toastr::error('Chỉ tạo phiếu lương từ ngày 1 đến ngày 10 !');
+            Toastr::error('Chỉ tạo phiếu lương từ ngày 1 đến ngày 29 !');
             return back();
         }
         if (SalaryHistory::query()->where('user_id' , $admin->id)->whereBetween('created_at', [Carbon::now()->startOfMonth()->format('Y/m/d'),Carbon::now()->startOfMonth()->addDays(30)->format('Y/m/d')])->count()) {
-            Toastr::error('Tháng này đã tạo phiếu lương !');
+            Toastr::error('Tháng này đã tạo phiếu lương!');
             return back();
         }
         $salary = new SalaryHistory();
@@ -66,12 +66,4 @@ class SalaryController extends Controller
         $list = SalaryHistory::get();
         return view('Admin.Salary.history',compact('list'));
     }
-    # download pdf
-    // public function testpdf ($id){
-    //     $salary = SalaryHistory::find($id);
-    //     $us = User::find($salary->user_id);
-    //     $system = DB::table('system_config')->first();
-    //     $pdf = \PDF::loadView('Admin.Example.payslip',compact('salary','system','us'));
-    //     return $pdf->download($us->user_detail->fullname.'-'.time().'.pdf');
-    // }
 }

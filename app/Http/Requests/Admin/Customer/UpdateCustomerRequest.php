@@ -32,7 +32,7 @@ class UpdateCustomerRequest extends FormRequest
             'customer_name'=>['required','between:1,100'],
             'birthday'=>['nullable','date_format:d/m/Y','before_or_equal:'.\Carbon\Carbon::now()->subYears(18)->format('d/m/Y')],
             'gender'=>['required','integer'],
-            'phone'=>['required','regex:/(0)[0-9]/','not_regex:/[a-z]/','size:4',
+            'phone'=>['required','regex:/(0)[0-9]/','not_regex:/[a-z]/','size:10',
                 Rule::unique('customer','phone')->ignore($this->route('id'))],
             'email'=>['required',Rule::unique('customer','email')->ignore($this->route('id'))],
             'address'=>['max:100'],

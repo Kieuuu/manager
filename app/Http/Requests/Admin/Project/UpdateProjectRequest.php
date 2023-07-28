@@ -31,7 +31,7 @@ class UpdateProjectRequest extends FormRequest
         ]);
         $validate = [
             'project_name'=>['required', 'between:3,255', Rule::unique('project','project_name')->ignore($this->route('id'))],
-            'customer_id'=>['required'],
+            'customer_id'=>[],
             'date_start'=>['required','date_format:d/m/Y','before:date_end'],
             'date_end'=>['required','date_format:d/m/Y'],
             // 'total_expense'=>['required','integer'],

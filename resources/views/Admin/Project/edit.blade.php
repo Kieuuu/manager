@@ -31,10 +31,10 @@
                 <div class="form-group">
                     <label>Khách hàng:<span
                         class="text-danger">*</span></label>
-                    <select name="customer_id" class="select">
-                        <option value="">Chọn khách hàng</option>
+                    <select name="customer_id" disabled class="select">
+                        <option value="" disabled>Chọn khách hàng</option>
                         @foreach( $param['customer'] as $i)
-                            <option {{($item->customer_id??old('customer_id'))==$i->id?"selected":""}} value="{{$i->id}}">{{$i->customer_name}}</option>
+                            <option {{($item->customer_id??old('customer_id'))==$i->id?"selected":""}} value="{{$i->id}}" >{{$i->customer_name}}</option>
                         @endforeach
                     </select>
                     @if($errors->has('customer_id'))

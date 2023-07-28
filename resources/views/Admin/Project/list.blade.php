@@ -104,7 +104,10 @@
                             </div>
                             <div class="pro-deadline m-b-15">
                                 <div class="title">
-                                    Ngày kết thúc: <span class="float-end">{{App\Helper\DateHelper::date($i->date_end)}}</span>
+                                    Ngày kết thúc: 
+
+                                    <span class="float-end">{{App\Helper\DateHelper::date($i->date_end)}}</span>
+                                
                                 </div>
                                 
                             </div>
